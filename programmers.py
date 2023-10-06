@@ -166,4 +166,23 @@ def solution(num):
         
     return answer
 #==================================================================#
-# 
+# 서울에서 김서방 찾기
+def solution(seoul):
+    answer = ''
+    for i in range(len(seoul)):
+        if seoul[i] == 'Kim':
+            answer = f"김서방은 {i}에 있다"
+    return answer
+#==================================================================#
+# 음양 더하기
+def solution(absolutes, signs):
+    answer = 0
+    
+    for i in range(len(absolutes)):
+        if signs[i] == True:
+            answer += absolutes[i]
+        else:
+            answer -= absolutes[i]
+    
+    return answer
+#==================================================================#
