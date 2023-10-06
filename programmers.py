@@ -135,3 +135,35 @@ def solution(x):
     
     return answer
 #==================================================================#
+# 두 정수 사이의 합
+def solution(a, b):
+    answer = 0
+    if a<b:
+        for i in range(a,b+1):
+            answer += i
+    else :
+        for i in range(b, a+1):
+            answer += i
+    return answer
+#==================================================================#
+# 콜라츠 추측
+def solution(num):
+    answer = 0
+    if num == 1:
+        answer = 0
+    
+    else:
+        while num != 1:
+            if num % 2 == 0:
+                num /= 2
+                answer += 1
+            else:
+                num = (num * 3) + 1
+                answer += 1
+                
+    if answer >= 500 :
+        answer = -1
+        
+    return answer
+#==================================================================#
+# 
