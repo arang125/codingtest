@@ -186,3 +186,84 @@ def solution(absolutes, signs):
     
     return answer
 #==================================================================#
+# 나누어 떨어지는 숫자 배열
+def solution(arr, divisor):
+    answer = []
+    for i in arr:
+        if i % divisor == 0:
+            answer.append(i)
+    if len(answer) == 0: 
+        answer.append(-1)
+    else:
+        list.sort(answer)
+    return answer
+#==================================================================#
+# 핸드폰 번호 가리기
+def solution(phone_number):
+    answer = ''
+    answer += '*'*(len(phone_number)-4)
+    for i in range(-4,0):
+        answer += phone_number[i]
+    return answer
+#==================================================================#
+# 없는 숫자 더하기
+def solution(numbers):
+    answer = 0
+    num = list(range(10))
+    
+    for i in num:
+        if i not in numbers:
+            answer += i
+            
+    return answer
+#==================================================================#
+# 제일 작은 수 제거하기
+def solution(arr):
+    arr.remove(min(arr))
+    if len(arr) == 0:
+        arr.append(-1)
+    return arr
+#==================================================================#
+# 가운데 글자 가져오기
+def solution(s):
+    answer = ''
+    if len(s) % 2 == 0:
+        mid = len(s)//2
+        answer += s[mid-1]
+        answer += s[mid]
+    else:
+        mid = len(s)//2
+        answer += s[mid]
+    return answer
+#==================================================================#
+# 수박수박수박수박수박수?
+def solution(n):
+    answer = ''
+    for i in range(n):
+        if i % 2 == 0:
+            answer += '수'
+        else:
+            answer += '박'
+    return answer
+#==================================================================#
+# 내적
+def solution(a, b):
+    answer = 0
+    for i in range(len(a)):
+        answer += a[i]*b[i]
+    return answer
+#==================================================================#
+# 약수의 개수와 덧셈
+def solution(left, right):
+    answer = 0
+    for i in range(left, right+1):
+        tmp = 0
+        for j in range(1, i+1):
+            if i % j == 0:
+                tmp += 1
+        if tmp % 2 == 0:
+            answer += i
+        else:
+            answer -= i
+    return answer
+#==================================================================#
