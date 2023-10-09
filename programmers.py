@@ -267,3 +267,50 @@ def solution(left, right):
             answer -= i
     return answer
 #==================================================================#
+# 부족한 금액 계산하기
+def solution(price, money, count):
+    answer = 0
+    total_price = 0
+    i = 1
+    
+    while i <= count :
+        total_price += price * i
+        i += 1
+    
+    if total_price > money:
+        answer = total_price - money
+    else:
+        answer = 0
+        
+    return answer
+#==================================================================#
+# 문자열 내림차순으로 배치하기
+def solution(s):
+    answer = ''
+    
+    tmp = sorted(s, reverse=True)
+    
+    for i in tmp:
+        answer += i
+    
+    return answer
+#==================================================================#
+# 문자열 다루기 기본
+def solution(s):
+    answer = False
+    
+    if ((len(s) == 4) | (len(s) == 6)) & (s.isdigit()):
+        answer = True
+            
+    return answer
+#==================================================================#
+# 행렬의 덧셈
+def solution(arr1, arr2):
+    answer = [[0 for i in range(len(arr1[0]))] for i in range(len(arr1))]
+    
+    for i in range(len(arr1)):
+        for j in range(len(arr1[0])):
+            answer[i][j] = arr1[i][j] + arr2[i][j]
+    
+    return answer
+#==================================================================#
