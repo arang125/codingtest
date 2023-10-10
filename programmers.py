@@ -314,3 +314,36 @@ def solution(arr1, arr2):
     
     return answer
 #==================================================================#
+# 직사각형 별찍기
+a, b = map(int, input().strip().split(' '))
+
+for i in range(b):
+    print('*' * a)
+#==================================================================#
+# 같은 숫자는 싫어
+def solution(arr):
+    answer = []
+    for i in range(len(arr)):
+        answer.append(arr[i])
+        if len(answer) > 1:
+            if answer[-1] == arr[i-1]:
+                answer.pop()
+                
+    return answer
+#==================================================================#
+# 3진법 뒤집기
+def solution(n):
+    answer = 0
+    
+    # 3진법으로 변환 + 뒤집힘
+    three_list = []
+    while n > 2:
+        three_list.append(n % 3)
+        n = n // 3
+    three_list.append(n)
+    
+    # 10진법으로 변환
+    for i in range(len(three_list)):
+        answer += three_list.pop() * (3 ** i)
+    return answer
+#==================================================================#
