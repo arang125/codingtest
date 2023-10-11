@@ -347,3 +347,68 @@ def solution(n):
         answer += three_list.pop() * (3 ** i)
     return answer
 #==================================================================#
+# 예산
+def solution(d, budget):
+    answer = 0
+    d = sorted(d)
+    
+    for i in range(len(d)):
+        if budget - d[i] >= 0:
+            budget -= d[i]
+            answer += 1
+        elif budget - d[i] < 0:
+            i += 1
+    
+    return answer
+#==================================================================#
+# 최소직사각형
+def solution(sizes):
+    answer = 0
+    resizes = []
+    
+    for i in range(len(sizes)):
+        if sizes[i][0] < sizes[i][1]:
+            resizes.append([sizes[i][1], sizes[i][0]])
+        else:
+            resizes.append([sizes[i][0], sizes[i][1]])
+            
+    front_max = 0
+    back_max = 0
+    
+    for i in range(len(sizes)):
+        if front_max < resizes[i][0]:
+            front_max = resizes[i][0]
+            
+    for i in range(len(sizes)):
+        if back_max < resizes[i][1]:
+            back_max = resizes[i][1]
+            
+    answer = front_max * back_max
+    
+    return answer
+#==================================================================#
+# 시저 암호
+def solution(s, n):
+    answer = ''
+    
+    alp = [chr(ord('a')+i) for i in range(26)]
+    ALP = [chr(ord('A')+i) for i in range(26)]
+    
+    for i in s:
+        if i in alp:
+            if alp.index(i)+n < len(alp):
+                answer += alp[alp.index(i)+n]
+            else:
+                answer += alp[alp.index(i)+n-26]
+                
+        elif i in ALP:
+            if ALP.index(i)+n < len(alp):
+                answer += ALP[ALP.index(i)+n]
+            else:
+                answer += ALP[ALP.index(i)+n-26] 
+        
+        elif i == " ":
+            answer += " "
+    
+    return answer
+#==================================================================#
