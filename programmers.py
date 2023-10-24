@@ -412,3 +412,56 @@ def solution(s, n):
     
     return answer
 #==================================================================#
+# 최댓값과 최솟값
+def solution(s):
+    answer = ''
+    tmp = s.split()
+    tmp_int = []
+    for i in tmp:
+        tmp_int.append(int(i))
+    answer = str(min(tmp_int)) + " " + str(max(tmp_int))
+    return answer
+#==================================================================#
+# JadenCase 문자열 만들기
+def solution(s):
+    answer = str.upper(s[0])
+    
+    for i in range(1, len(s)):
+        if (answer[-1] == " "):
+            answer += str.upper(s[i])
+        else:
+            answer += str.lower(s[i])
+            
+    return answer
+#==================================================================#
+# 최솟값 만들기
+def solution(A,B):
+    answer = 0
+    
+    A_sort = sorted(A, reverse=True)
+    B_sort = sorted(B, reverse=False)
+    
+    for i in range(len(A_sort)):
+        answer += A_sort.pop() * B_sort.pop()
+    
+    return answer
+#==================================================================#
+# 올바른 괄호
+def solution(s):
+    answer = True
+    tmp = [s[0]]
+    
+    for i in range(1, len(s)):
+        if len(tmp) > 0:
+            if(tmp[-1] == "(") & (s[i] == ")"):
+                tmp.pop()
+            else:
+                tmp += s[i]
+        else:
+            tmp += s[i]
+    
+    if len(tmp) > 0:
+        answer = False
+    
+    return answer
+#==================================================================#
