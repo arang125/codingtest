@@ -30,18 +30,18 @@ for _ in range(t):
         for t in tmp:
             tmp_list += t
             C_dict[tmp_list] += 1
-            # print(C_dict)
+            print(C_dict)
     
     # 완전한 전화번호가 쪼갠 목록에 두 번 이상 있으면 일관성 X
     for NUM in NUMS:
         if C_dict[NUM] > 1:
             answer += 1
-            # print(NUM)
+            print(NUM)
     
     if answer > 1:
         print('NO')
-        # print(answer)
+        print(answer)
             
     else:
         print('YES')
-        # print(answer)
+        print(answer)
